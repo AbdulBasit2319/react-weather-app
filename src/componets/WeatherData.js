@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import Context from '../Context';
 
 function WeatherData() {
-    const weather =useContext(Context);
+    const {weather , city} =useContext(Context);
     const{temp='',humidity='',pressure=''}= weather;
     console.log(temp);
     console.log(weather);
@@ -10,7 +10,7 @@ function WeatherData() {
     return (
         <div>
             <div className="weather-data">
-                <p className="weather__tagline">Weather forecast for <span className="weather-data__city">Manchester</span></p>
+                <p className="weather__tagline">Weather forecast for <span className="weather-data__city">{city}</span></p>
                 <div className="weather-data__box">
                     <span className="weather-data__property">
                         <p className="weather-data__title">Temperature</p>
